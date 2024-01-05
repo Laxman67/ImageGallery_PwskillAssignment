@@ -5,7 +5,7 @@ import axios from "axios";
 import { useState } from "react";
 
 function Gallery() {
-  const [imageData, setImageData] = useState({});
+  const [imageData, setImageData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   async function downloadImageData() {
