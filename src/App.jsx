@@ -1,10 +1,13 @@
 import "./App.css";
 import CustomRoutes from "./routes/CustomRoutes";
+import { Link } from "react-router-dom/dist";
 
 function App() {
   return (
     <div className="container">
-      <h3>Gallery Hub</h3>
+      <Link to="/" className="home-button">
+        Gallery Hub
+      </Link>
       <CustomRoutes />
     </div>
   );

@@ -1,9 +1,28 @@
 .image-container {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
   width: 200px;
-  height: 200px;
-  background-color: aquamarine;
+  height: 220px;
+  background-color: rgb(81, 90, 87);
   border-radius: 10px;
   overflow: hidden;
+  transition: all 0.2s ease-out;
+}
+
+a {
+  text-decoration: none;
+
+  color: black;
+  text-align: center;
+}
+
+.image-container:hover {
+  transform: scale(1.05);
+
+  box-shadow: 1px 4px 3px rgba(0, 0, 0, 0.4);
+}
+
+.image-container div {
+  color: beige;
 }

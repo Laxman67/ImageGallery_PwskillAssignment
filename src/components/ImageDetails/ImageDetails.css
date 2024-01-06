@@ -1,0 +1,29 @@
+.image-detail-container {
+  max-width: 900px;
+  display: flex;
+  gap: 2rem;
+  margin: 1rem auto;
+  justify-items: center;
+  align-items: center;
+  background-color: rgb(81, 90, 87);
+  padding: 1rem;
+  box-sizing: border-box;
+  border-radius: 10px;
+  /* color: beige; */
+
+  color: black;
+}
+
+.image-detail-container img {
+  border-radius: 5px;
+  width: 400px;
+  height: auto;
+  transition: all 0.5s ease-in-out;
+}
+.image-detail-container img:hover {
+  transform: scale(1.05);
+}
+
+.image-detail-container div {
+  color: beige;
+}

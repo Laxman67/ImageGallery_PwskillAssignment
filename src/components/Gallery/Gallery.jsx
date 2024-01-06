@@ -8,27 +8,26 @@ function Gallery() {
   const [imageData, setImageData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  // URL to Resource
+  const source_Url = `https://api.slingacademy.com/v1/sample-data/photos?offset=5&limit=20`;
+
   async function downloadImageData() {
-    const res = await axios.get(
-      `https://api.slingacademy.com/v1/sample-data/photos?offset=5&limit=20`
-    );
+    const res = await axios.get(source_Url); // Fetch URL data Using axios
 
     const photoResults = res.data.photos;
     const photoDetails = photoResults.map((photo) => {
+      // Get data and set its properties as needed
       return {
         id: photo.id,
         title: photo.title,
         url: photo.url,
       };
     });
-    console.log(photoDetails);
 
-    setImageData(photoDetails);
+    setImageData(photoDetails); // Set Data into  setImageData
 
     setIsLoading(false);
   }
-
-  console.log("Data.....", imageData);
 
   useEffect(() => {
     downloadImageData();
@@ -36,16 +35,10 @@ function Gallery() {
 
   return (
     <div className="gallery-wrapper">
-      {/* <Image
-        url="https://api.slingacademy.com/public/sample-photos/3.jpeg"
-        title="Party about different guess bill too owner"
-        id="3"
-      /> */}
-
       {isLoading
         ? "Loading ........."
         : imageData.map((e) => {
-            <Image url={e.url} title={e.title} id={e.id} key={e.id} />;
+            return <Image url={e.url} title={e.title} id={e.id} key={e.id} />;
           })}
     </div>
   );
